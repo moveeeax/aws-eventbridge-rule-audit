@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aws-eventbridge-rule-audit"
+version = "0.1.0"
+description = "Audit AWS EventBridge rules offline: inert rules, missing DLQs, unmatchable patterns"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+authors = [{ name = "Michael Tarassov", email = "michael@tarassov.me" }]
+keywords = ["aws", "eventbridge", "audit", "sre", "cli", "devops"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: System Administrators",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: System :: Systems Administration",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/moveeeax/aws-eventbridge-rule-audit"
+Issues = "https://github.com/moveeeax/aws-eventbridge-rule-audit/issues"
+
+[project.scripts]
+aws-eventbridge-rule-audit = "ebaudit.cli:run"
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools]
+packages = ["ebaudit"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

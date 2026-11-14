@@ -1,0 +1,10 @@
+{
+  "Targets": [
+    {
+      "Id": "any-queue",
+      "Arn": "arn:aws:sqs:eu-west-1:123456789012:billing-*",
+      "DeadLetterConfig": { "Arn": "arn:aws:sqs:eu-west-1:123456789012:eventbridge-dlq" },
+      "RetryPolicy": { "MaximumRetryAttempts": 3 }
+    }
+  ]
+}

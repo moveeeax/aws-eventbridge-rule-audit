@@ -1,0 +1,11 @@
+{
+  "Rule": "deleted-rule",
+  "Targets": [
+    {
+      "Id": "stale-lambda",
+      "Arn": "arn:aws:lambda:eu-west-1:123456789012:function:long-gone",
+      "DeadLetterConfig": { "Arn": "arn:aws:sqs:eu-west-1:123456789012:eventbridge-dlq" },
+      "RetryPolicy": { "MaximumRetryAttempts": 2 }
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "Rules": [
+    {
+      "Name": "healthy-ec2-state-change",
+      "Arn": "arn:aws:events:eu-west-1:123456789012:rule/healthy-ec2-state-change",
+      "EventPattern": "{\"source\":[\"aws.ec2\"],\"detail-type\":[\"EC2 Instance State-change Notification\"]}",
+      "State": "ENABLED",
+      "Description": "Reacts to EC2 state changes, with a DLQ and a retry policy",
+      "EventBusName": "default"
+    },
+    {
+      "Name": "nightly-report",
+      "Arn": "arn:aws:events:eu-west-1:123456789012:rule/nightly-report",
+      "ScheduleExpression": "cron(0 2 * * ? *)",
+      "State": "ENABLED",
+      "EventBusName": "default"
+    },
+    {
+      "Name": "orphaned-cleanup",
+      "Arn": "arn:aws:events:eu-west-1:123456789012:rule/orphaned-cleanup",
+      "EventPattern": "{\"source\":[\"aws.ecs\"]}",
+      "State": "ENABLED",
+      "EventBusName": "default"
+    },
+    {
+      "Name": "parked-after-incident",
+      "Arn": "arn:aws:events:eu-west-1:123456789012:rule/parked-after-incident",
+      "EventPattern": "{\"source\":[\"aws.health\"]}",
+      "State": "DISABLED",
+      "EventBusName": "default"
+    },
+    {
+      "Name": "typo-in-source",
+      "Arn": "arn:aws:events:eu-west-1:123456789012:rule/billing-bus/typo-in-source",
+      "EventPattern": "{\"source\":\"aws.s3\"}",
+      "State": "ENABLED",
+      "EventBusName": "billing-bus"
+    },
+    {
+      "Name": "broken-pattern",
+      "Arn": "arn:aws:events:eu-west-1:123456789012:rule/broken-pattern",
+      "EventPattern": "{\"source\": [\"aws.rds\"",
+      "State": "ENABLED",
+      "EventBusName": "default"
+    },
+    {
+      "Name": "half-hourly-sync",
+      "Arn": "arn:aws:events:eu-west-1:123456789012:rule/half-hourly-sync",
+      "ScheduleExpression": "rate(1 hours)",
+      "State": "ENABLED",
+      "EventBusName": "default"
+    }
+  ]
+}

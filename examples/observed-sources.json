@@ -1,0 +1,4 @@
+{
+  "Sources": ["aws.ec2", "aws.health", "aws.s3", "aws.rds", "acme.billing"],
+  "DetailTypes": ["EC2 Instance State-change Notification", "AWS Health Event"]
+}

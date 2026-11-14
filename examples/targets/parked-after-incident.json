@@ -1,0 +1,9 @@
+{
+  "Targets": [
+    {
+      "Id": "page-oncall",
+      "Arn": "arn:aws:sns:eu-west-1:123456789012:oncall",
+      "RetryPolicy": { "MaximumRetryAttempts": 2 }
+    }
+  ]
+}

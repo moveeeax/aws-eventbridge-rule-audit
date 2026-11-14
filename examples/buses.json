@@ -1,0 +1,6 @@
+{
+  "EventBuses": [
+    { "Name": "default", "Arn": "arn:aws:events:eu-west-1:123456789012:event-bus/default" },
+    { "Name": "billing-bus", "Arn": "arn:aws:events:eu-west-1:123456789012:event-bus/billing-bus" }
+  ]
+}

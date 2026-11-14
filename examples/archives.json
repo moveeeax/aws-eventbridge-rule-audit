@@ -1,0 +1,9 @@
+{
+  "Archives": [
+    {
+      "ArchiveName": "default-archive",
+      "EventSourceArn": "arn:aws:events:eu-west-1:123456789012:event-bus/default",
+      "State": "ENABLED"
+    }
+  ]
+}

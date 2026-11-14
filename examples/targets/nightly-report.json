@@ -1,0 +1,12 @@
+{
+  "Targets": [
+    {
+      "Id": "build-report",
+      "Arn": "arn:aws:states:eu-west-1:123456789012:stateMachine:build-report",
+      "InputTransformer": {
+        "InputPathsMap": { "time": "$.time" },
+        "InputTemplate": "{\"ranAt\": <time>, \"window\": <window>}"
+      }
+    }
+  ]
+}
